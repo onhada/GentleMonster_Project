@@ -1319,3 +1319,23 @@ button.btn.btn-danger {
     font-size: 15px;
     margin-bottom: 10%;
 }
+
+
+/* 예진 추가*/
+input[type=number] {
+    outline: none;
+    border: none;
+}
+input[type=number] {
+    -moz-appearance: textfield;
+}
+.n-header__logo svg {
+    width: auto;
+    height: 19.35px;
+    position: relative;
+    z-index: 3;
+}
+/* footer modal 전용*/
+div#guarantee_modal .modal-body {
+    margin: 0 auto;
+}

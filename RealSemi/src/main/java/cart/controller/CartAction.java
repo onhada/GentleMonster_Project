@@ -1,8 +1,6 @@
 package cart.controller;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -24,7 +22,8 @@ public class CartAction extends AbstractController {
 
 		MemberVO loginUser = new MemberVO();
 
-		loginUser.setEmail("hi@naver.com");
+		loginUser.setEmail("forServletTest@gmail.com");
+		loginUser.setFullName("신예진");
 		loginUser.setMemberId(1234);
 
 		HttpSession session = req.getSession();
@@ -38,7 +37,7 @@ public class CartAction extends AbstractController {
 			// 유저의 로그인 정보 바탕으로 쇼핑백에 등록된 상품 꺼내오기
 			CartDAO dao = new CartDAO_imple();
 			List<CartVO> cartList = dao.getCartList(((MemberVO) session.getAttribute("loginUser")).getMemberId());
-
+			session.setAttribute("cartList", cartList);
 			req.setAttribute("cartList", cartList);
 
 			super.setRedirect(false);

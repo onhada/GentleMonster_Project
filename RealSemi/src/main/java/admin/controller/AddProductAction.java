@@ -1,8 +1,6 @@
 package admin.controller;
 
 import java.io.File;
-import java.io.PrintWriter;
-import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -221,7 +219,7 @@ public class AddProductAction extends AbstractController {
 
 				// 30Mbyte 제한
 				int maxSize = 1024 * 1024 * 30;
-				String fsl = File.separator;
+				String fsl = "/";
 				// C:\NCS\workspace_jsp\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\TempSemi
 				String root = req.getSession().getServletContext().getRealPath(fsl);
 

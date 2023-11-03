@@ -9,15 +9,11 @@ String ctxPath = request.getContextPath();
 <article id="home" class="container_sq">
 	<section class="main collection-campaign font--kr" data-header-group="white">
 		<article class="main-wrapper">
-			<picture> 
+			<picture>
 			
-			<c:forEach var="productVo" items="${requestScope.indexImageList}" varStatus="status">
-				<a class = "productDetail" id="productDetail${productVo.productDetailId}" href="<%=ctxPath%>/productDetail?productDetailId=${productVo.productDetailId}">
-					<img class="main-image hide-tabletLte" src="<%=ctxPath%>${productVo.mainImageFile}" alt="">
-				</a>
-			</c:forEach> 
-			<!-- 			<img class="main-image hide-tabletLte" src="https://web-resource.gentlemonster.com/assets/stories/2023-collection/img/main/pc/main-banner-pc.jpg" alt=""> <a href="https://www.gentlemonster.com/kr/shop/list?category_name=sunglasses&amp;sub_category_name=view-all" class="main-link show-tabletLte" title="구매하기"> <img class="main-image main-image--tablet" src="https://web-resource.gentlemonster.com/assets/stories/2023-collection/img/main/mobile/main-banner-mo.jpg" alt="" title=""> --> </picture>
-
+			<a class = "productDetail" href="">
+					<img class="main-image hide-tabletLte" src="" alt="">
+				</a> 
 			<div class="margiela__text text-area">
 				<h1 class="text-area__title">
 					<em class="text-area__title gm-c font--kr font--29 font--22-m"> 2023 <span class="main-title font--kr font--26 font--19-m font--md">신상품</span>

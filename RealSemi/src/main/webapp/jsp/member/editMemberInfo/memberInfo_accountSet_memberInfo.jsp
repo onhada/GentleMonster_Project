@@ -33,21 +33,21 @@ String ctxPath = request.getContextPath();
 		<div class="topnav">
 			<div class="topnav-left">
 				<div class="page_menu_item link_item font--kr font--15 font--bd">
-					<a class="title" href="수정필">회원정보</a>
+					<a class="title" href="<%=ctxPath%>/member/memberInfoViewAll.gm">회원정보</a>
 				</div>
 			</div>
 			<ul class="page_menu_items page_menu_pc_items">
 				<li class="page_menu_item link_item  selected">
-					<a href="수정필" class="font--kr font--15 font--rg"> 전체보기 </a>
+					<a href="<%=ctxPath%>/member/memberInfoViewAll.gm" class="font--kr font--15 font--rg"> 전체보기 </a>
 				</li>
 				<li class="page_menu_item link_item  ">
-					<a href="수정필" class="font--kr font--15 font--rg"> 위시리스트 </a>
+					<a href="<%=ctxPath%>/wish/wish.gm" class="font--kr font--15 font--rg"> 위시리스트 </a>
 				</li>
 				<li class="page_menu_item link_item  ">
-					<a href="수정필" class="font--kr font--15 font--rg" data-category="account" data-action="account_setting" data-label=""> 계정 설정 </a>
+					<a href="" class="font--kr font--15 font--rg" data-category="account" data-action="account_setting" data-label=""> 계정 설정 </a>
 				</li>
 				<li class="page_menu_item link_item  ">
-					<a href="수정필" class="font--kr font--15 font--rg"> 주문 </a>
+					<a href="<%=ctxPath%>/order/orderList.gm" class="font--kr font--15 font--rg"> 주문 </a>
 				</li>
 			</ul>
 			<div class="topnav-right">
@@ -67,14 +67,14 @@ String ctxPath = request.getContextPath();
 					<div class="page_menu_list">
 						<ul class="page_menu_items page_menu_pc_items">
 							<li class="page_menu_item link_item font--13 selected">
-								<a href="수정필" class="font--kr font--13 font--rg"> 회원정보 </a>
+								<a href="<%=ctxPath%>/member/memberInfoEdit.gm" class="font--kr font--13 font--rg"> 회원정보 </a>
 							</li>
 							<!-- todo: move when develop layout -->
 							<li class="page_menu_item link_item font--13 ">
-								<a href="수정필" class="font--kr font--13 font--rg"> 주소록 </a>
+								<a href="<%=ctxPath%>/address/addressBook.gm" class="font--kr font--13 font--rg"> 주소록 </a>
 							</li>
 							<li class="page_menu_item link_item font--13 ">
-								<a href="수정필" class="font--kr font--13 font--rg"> 비밀번호 변경 </a>
+								<a href="<%=ctxPath%>/member/memberToChangePwd.gm" class="font--kr font--13 font--rg"> 비밀번호 변경 </a>
 							</li>
 						</ul>
 					</div>
@@ -97,12 +97,17 @@ String ctxPath = request.getContextPath();
 					
 					</div>
 					<div class="button-group">
-						<button data-toggle="modal" data-target="#memberDeleteModal" type="button" class="btn btn-black font--kr font--13 font--rg">회원탈퇴</button>
-						<!-- 							<button data-toggle="modal" data-target="#memberDeleteModal"
+				<!-- 	 
+					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#memberDeleteModal">
+		  Open Centered Modal
+		</button>
+		   -->
+						   <button data-toggle="modal" data-target="#memberDeleteModal" type="button" class="btn btn-black font--kr font--13 font--rg">회원탈퇴</button>
+						    <!-- 						<button data-toggle="modal" data-target="#memberDeleteModal"
 								type="button" class="btn btn-black font--kr font--13 font--rg"
 								onclick="popupLayer3(document.querySelector('#secede'), 501, 631)" 
 								data-category="account" data-action="withdrawal_click"
-								data-label="">회원탈퇴</button> -->
+								data-label="">회원탈퇴</button> -->	
 					</div>
 				</div>
 			</div>
@@ -113,6 +118,68 @@ String ctxPath = request.getContextPath();
 </div>
 
 
+		 
+		
+		<!-- Modal -->
+		<!-- Modal 구성 요소는 현재 페이지 상단에 표시되는 대화 상자/팝업 창입니다. -->
+		<div class="modal fade" id="memberDeleteModal">
+		  <div class="modal-dialog modal-dialog-centered">
+		  <!-- .modal-dialog-centered 클래스를 사용하여 페이지 내에서 모달을 세로 및 가로 중앙에 배치합니다. -->
+		    <div class="modal-content">
+		      
+		      <!-- Modal header -->
+		      <div class="modal-header">
+		      	<h2 class="title font--kr font--15 font--bd">회원탈퇴 안내</h2>
+		       <!--  <h5 class="modal-title">회원탈퇴 안내</h5> -->
+		        <button type="button" class="close" data-dismiss="modal">&times;</button>
+		      </div>
+		      
+		      <!-- Modal body -->
+		      <div class="modal-body">
+			      <p class="list-title font--kr font--13 font--rg">회원탈퇴 전 유의사항을 확인해 주세요</p>
+			      
+			      
+			      <ul class="list">
+						<li class="font--kr font--13 font--rg">부정 이용을 방지하기 위하여 회원탈퇴 후 48시간 이내로 재가입이 불가합니다.  (단, 간편가입 회원은 즉시 재가입 가능합니다.)</li>
+						<li class="font--kr font--13 font--rg">탈퇴 즉시 개인정보가 삭제되고 어떠한 방법으로도 복원할 수 없습니다.</li>
+						<li class="font--kr font--13 font--rg">교환/반품/환불 및 사후처리(A/S) 등을 위하여 전자상거래 등에서의 소비자보호에 관한 법률에 의거해 일정 기간동안 보관 후 파기됩니다.</li>
+					</ul>
+					
+					<input type="hidden" id="addrDefaultCheck" name="addrDefaultCheck" value="0"/>	
+										 
+					<div style="display:flex">
+				
+						<div style="  border:solid 2px black;   border-radius: 5px;   display:inline-block;   ">
+							<button type="button" id="btnDefault" style="background-color: white;   height:100%; color:white;    " >버튼</button>
+							
+						</div>
+					 
+						 <div>
+						 	&nbsp; 
+							<span class="font--kr font--13 font--rg">위 유의사항을 모두 확인하였고, 회원탈퇴에 동의합니다.</span>																						 
+						 </div>																							 								  
+					</div>
+
+				 
+					
+					
+					
+		       </div>
+		      
+		      <!-- Modal footer -->
+		      <div class="modal-footer">
+		      	<div class="section-row">
+		      	
+		      		<button type="button"   data-dismiss="modal" class="btn btn-white btn-close font--kr font--13 font--rg">취소</button>
+		        	<button type="button"  id="talCheck" class="btn btn-white margin_l10 font--kr font--13 font--rg">확인</button>
+		    
+		      	</div>
+		       </div>
+		       
+		    </div>
+		  </div>
+		</div>
+		
 
 
 
@@ -120,26 +187,26 @@ String ctxPath = request.getContextPath();
 
 
 
+<!-- 
 
 
 
-
-<!-- Modal -->
-<!-- Modal 구성 요소는 현재 페이지 상단에 표시되는 대화 상자/팝업 창입니다. -->
+Modal
+Modal 구성 요소는 현재 페이지 상단에 표시되는 대화 상자/팝업 창입니다.
 <div class="modal fade" id="memberDeleteModal">
 	<div class="modal-dialog">
 		<div class="modal-content">
 
-			<!-- Modal header -->
+			Modal header
 			<div class="modal-header">
 				<h5 class="modal-title">Modal title</h5>
 				<button type="button" class="close" data-dismiss="modal">&times;</button>
 			</div>
 
-			<!-- Modal body -->
+			Modal body
 			<div class="modal-body">Modal body....</div>
 
-			<!-- Modal footer -->
+			Modal footer
 			<div class="modal-footer">
 				<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
 				<button type="button" class="btn btn-primary">Save changes</button>
@@ -148,12 +215,12 @@ String ctxPath = request.getContextPath();
 	</div>
 </div>
 
+ -->
 
 
 
 
-
-<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~   
 <div class="dim-layer" style="display: block;">
 	<div class="dimBg"></div>
 	<div id="secede" class="pop-wrap font--kr" style="width: 501px; height: auto; margin-left: 608.5px; margin-top: 200.5px;">
@@ -183,8 +250,8 @@ String ctxPath = request.getContextPath();
 		</div>
 		<a class="pop-close">&nbsp;</a>
 	</div>
-</div>	 -->
-
+</div>	
+-->
 
 
 

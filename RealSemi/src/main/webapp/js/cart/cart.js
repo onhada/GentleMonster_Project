@@ -1,5 +1,3 @@
-
-
 $(document).ready(function() {
 	const pathname = "/" + window.location.pathname.split("/")[1] + "/";
 	const origin = window.location.origin;
@@ -21,8 +19,15 @@ $(document).ready(function() {
 	$("button.cartOrderBtn").click(function() {
 		// 결제하기 버튼이 눌렸을 때 주문관련 컨트롤로 연결
 
-		/* redirect */
-		$(location).attr("href", contextPath + "order/orderAddress.gm");
+		if ($("div.stockCheck").html() == '품절') {
+			alert("재고가 없는 상품을 삭제하고 주문해주십시오")
+		} else {
+			/* 재고가 0인 상품이 없을 경우 */
+			
+			/* redirect */
+			$(location).attr("href", contextPath + "order/orderAddress.gm");
+		}
+
 
 	}); // end of $("button.cartOrderBtn").click(function(){}) -----------------------
 
@@ -47,11 +52,11 @@ function goDelete(cartId) {
 		success: function(text) {
 			if (text.isDelete) {
 				// true일 경우 = 삭제처리가 완료되었을경우
-				
+
 				$(location).attr("href", contextPath + "cart/cart.gm");
 			} else {
 				// false일 경우 = 삭제되지 않았을 경우
-				
+
 				alert("삭제 실패! 정상적으로 작동되지 않았습니다. 원래 화면으로 돌아갑니다");
 			}
 		},
@@ -63,11 +68,12 @@ function goDelete(cartId) {
 
 
 /* 쇼핑백 아이템 수량 수정 액션 */
-function goUpdate(cartId, qty, action) {
+function goUpdate(cartId, action) {
 	const pathname = "/" + window.location.pathname.split("/")[1] + "/";
 	const origin = window.location.origin;
 	const contextPath = origin + pathname;
-
+	
+	let qty = $('input#cartQuantity' + cartId).val();
 
 	/* 현재의 수량이 1인데 빼려고 했을 경우 */
 	if (qty == 1 && action == "subtract") {
@@ -88,7 +94,7 @@ function goUpdate(cartId, qty, action) {
 
 				// 유저가 업데이트한 상품의 수량
 				$('input#cartQuantity' + text.cartId).val(text.quantity);
-				
+
 				// 유저의 카트 안에 있는 상품들의 총 수량
 				let quantity = 0;
 				$("td.sod_name input.input_qty").each(function() {
@@ -110,7 +116,13 @@ function goUpdate(cartId, qty, action) {
 				/* 배송비를 포함한 총 주문금액 설정하기 -> 배송비 관련 확인하고 수정하기 */
 				const summaryPrice = $("span.checkout-summary-price");
 				summaryPrice.html(" " + addComma(calculateAmount()) + "원 ");
-
+				
+				
+				
+				$("input.input_qty").trigger("change");
+				
+				
+				
 			} else {
 				// false일 경우 = 삭제되지 않았을 경우
 				alert("수량 변경 실패! 정상적으로 작동되지 않았습니다. 원래 화면으로 돌아갑니다");
@@ -120,6 +132,11 @@ function goUpdate(cartId, qty, action) {
 			alert("code: " + request.status + "\n" + "message: " + request.responseText + "\n" + "error: " + error);
 		}
 	});
+	
+	
+	
+	
+	
 }; // end of function goUpdate(cartId, qty, action) -------------------------------------------------------------------------------------------------------
 
 

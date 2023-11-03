@@ -57,12 +57,22 @@ String ctxPath = request.getContextPath();
 														원
 													</p>
 													<div class="cart_product_etc">
-														<div class="field">
-															<button type="button" class="subtract_qty" onclick="goUpdate(${cartVo.cartId}, ${cartVo.quantity}, 'subtract');">-</button>
-															<%-- readonly 확인 수정필 --%>
-															<input type="number" class="input_qty" id="cartQuantity${cartVo.cartId}" value="${cartVo.quantity}" min="1" max="10" readonly="false">
-															<button type="button" class="add_qty" onclick="goUpdate(${cartVo.cartId}, ${cartVo.quantity}, 'add');">+</button>
-														</div>
+														<%-- 현재 재고가 0이 아니라면 --%>
+														<c:if test="${cartVo.stock ne 0}">
+															<div class="field stockCheck">
+																<button type="button" class="subtract_qty" onclick="goUpdate(${cartVo.cartId}, 'subtract');">-</button>
+																<%-- readonly 확인 수정필 --%>
+																<input type="number" class="input_qty" id="cartQuantity${cartVo.cartId}" value="${cartVo.quantity}" min="1" max="10" readonly="false">
+																<button type="button" class="add_qty" onclick="goUpdate(${cartVo.cartId}, 'add');">+</button>
+															</div>
+														</c:if>
+														<%-- end of 현재 재고가 0이 아니라면 --%>
+
+														<%-- 현재 재고가 0이라면 --%>
+														<c:if test="${cartVo.stock eq 0}">
+															<div class="font--13 stockCheck">품절</div>
+														</c:if>
+														<%-- end of 현재 재고가 0이라면 --%>
 													</div>
 												</td>
 

@@ -382,10 +382,136 @@ input[type=password] {
     background-position: 0 0;
 }
 
+/*
+예인추가*/
+
+#button_reset_password {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 48px;
+}
+.account .center-content, .account .center-content .button-group, .account .center-content .btn {
+    max-width: 318px;
+}
+.btn.font--kr, .font--kr.button {
+    font-family: "SDGothicNeo";
+}
+.btn-black {
+    /* border: none; */
+    background: #000 !important;
+    color: #fff;
+}
+.btn, .button {
+    width: 100%;
+    height: 40px;
+    padding: 0 12px;
+    line-height: 40px;
+    font-size: 13px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+.font--13 {
+    font-size: 13px;
+}
+.font--rg {
+    font-weight: normal;
+}
+.font--kr {
+    font-family: "Unica77LLWeb","SDGothicNeo", sans-serif;
+    word-break: keep-all;
+}
+button {
+    border: none;
+    background: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+}
+body, p, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, table, th, td, form, fieldset, legend, input, textarea, button {
+    margin: 0;
+    padding: 0;
+}
+button {
+    background: transparent;
+    padding: 0;
+    border: 0;
+    letter-spacing: 0em;
+}
+input, button, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+button, html input[type=button], input[type=reset], input[type=submit] {
+    -webkit-appearance: button;
+    cursor: pointer;
+}
+button, select {
+    text-transform: none;
+}
+button {
+    overflow: visible;
+}
+button, input, optgroup, select, textarea {
+    margin: 0;
+    font: inherit;
+    color: inherit;
+}
+* {
+    box-sizing: border-box;
+    line-height: normal;
+}
+* {
+    box-sizing: border-box;
+    line-height: normal;
+}
+* {
+    box-sizing: border-box;
+}
 
 
-/*예진 추가*/
-@media (min-width: 768px){
-.page_menu_item a {
-    font-size: 13px !important;
-}}
+body, p, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, table, th, td, form, fieldset, legend, input, textarea, button {
+    margin: 0;
+    padding: 0;
+}
+html, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, form, dl, dt, dd, ol, ul, li, fieldset, form, label, legend {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    /* font-size: 100%; */
+    /* vertical-align: top; */
+    background: transparent;
+    word-break: break-all;
+}
+* {
+    box-sizing: border-box;
+    line-height: normal;
+}
+* {
+    box-sizing: border-box;
+    line-height: normal;
+}
+* {
+    box-sizing: border-box;
+}

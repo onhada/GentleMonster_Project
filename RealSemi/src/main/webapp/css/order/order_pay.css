@@ -1047,7 +1047,7 @@ input[type=checkbox], input[type=radio] {
 }
 
 .link {
-    text-decoration: underline;
+    /* text-decoration: underline; */
 }
 
 .link {
@@ -1914,4 +1914,7 @@ input[type=checkbox] ~ .input-box-check-layer:after {
     /* color: rgb(186, 41, 26); */
     /* border-color: rgb(186, 41, 26); */
     color: #ef480e;
+}
+.modal-footer {
+    display: flex !important;
 }

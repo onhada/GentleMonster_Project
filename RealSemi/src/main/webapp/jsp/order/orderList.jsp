@@ -1,4 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%
 String ctxPath = request.getContextPath();
 %>
@@ -8,6 +11,7 @@ String ctxPath = request.getContextPath();
 <link rel="stylesheet" href="<%=ctxPath%>/css/order/orderList.css">
 <title>GENTLE MONSTER Official Site</title>
 <jsp:include page="../common/header.jsp" />
+<script src="<%=ctxPath%>/js/order/orderList.js"></script>
 
 
 <div class="container_sq">
@@ -17,21 +21,21 @@ String ctxPath = request.getContextPath();
 		<div class="topnav">
 			<div class="topnav-left">
 				<div class="page_menu_item link_item font--kr font--15 font--bd">
-					<a class="title" href="수정필">회원정보</a>
+					<a class="title" href="<%=ctxPath%>/member/memberInfoViewAll.gm">회원정보</a>
 				</div>
 			</div>
 			<ul class="page_menu_items page_menu_pc_items">
 				<li class="page_menu_item link_item  ">
-					<a href="수정필" class="font--kr font--15 font--rg"> 전체보기 </a>
+					<a href="<%=ctxPath%>/member/memberInfoViewAll.gm" class="font--kr font--15 font--rg"> 전체보기 </a>
 				</li>
 				<li class="page_menu_item link_item  ">
-					<a href="수정필" class="font--kr font--15 font--rg"> 위시리스트 </a>
+					<a href="<%=ctxPath%>/wish/wish.gm" class="font--kr font--15 font--rg"> 위시리스트 </a>
 				</li>
 				<li class="page_menu_item link_item  ">
-					<a href="수정필" class="font--kr font--15 font--rg" data-category="account" data-action="account_setting" data-label=""> 계정 설정 </a>
+					<a href="" class="font--kr font--15 font--rg"> 계정 설정 </a>
 				</li>
 				<li class="page_menu_item link_item  selected">
-					<a href="수정필" class="font--kr font--15 font--rg"> 주문 </a>
+					<a href="<%=ctxPath%>/order/orderList.gm" class="font--kr font--15 font--rg"> 주문 </a>
 				</li>
 			</ul>
 			<div class="topnav-right">
@@ -44,61 +48,44 @@ String ctxPath = request.getContextPath();
 			<div class="edit-wrap text_l">
 				<div class="head">
 					<div class="title font--kr font--15 font--bd">주문</div>
-					<!-- <div class="action font--<?//=$css?>" id="previous_order_div" style="display: none">
-						<a href="<?//= base_url('/customer/previous_order') ?>"><?//= lang("shop.previous.show") ?></a>
-					</div> -->
 				</div>
 				<div class="order-history-list">
-					<div class="order-history-item">
-						<div class="order-history-item-info">
-							<div class="box-left">
-								<img class="order-image" src="https://www-prd-kr.gentlemonster.com/media/catalog/product/cache/b30b2c4494df46b5c4beed6ec9b510ab/1/1/11001_NINE_PART_PIECE_GC5_1_1.jpg" alt="">
-							</div>
-							<div class="box-right">
-								<div class="order-info">
-									<div class="order-increment-id font--kr font--13 font--rg">ORDER #000095716</div>
-									<div class="order-increment-id font--kr font--13 font--rg">
-										입금대기<span class="font--13 font--rg"> 외 </span>1<span class="font--13 font--rg">건</span>
+					<c:if test="${not empty requestScope.orderList}">
+						<c:forEach var="orderVo" items="${requestScope.orderList}">
+
+							<div class="order-history-item">
+								<div class="order-history-item-info">
+									<div class="box-left">
+										<img class="order-image" src="<%= ctxPath %>${orderVo.mainImageFile}" alt="">
 									</div>
-									<div class="order-total-items">
-										<span class="font--kr font--13 font--rg">주문 수량</span> : <span class="font--kr font--13 font--rg">3</span>
+									<div class="box-right">
+										<div class="order-info">
+											<div class="order-increment-id font--kr font--13 font--rg">ORDER #${orderVo.orderId}</div>
+											<div class="order-increment-id font--kr font--13 font--rg">${orderVo.orderStatus}</div>
+											<div class="order-total-items">
+												<span class="font--kr font--13 font--rg">주문 수량</span>
+												:
+												<span class="font--kr font--13 font--rg">${orderVo.quantity}</span>
+											</div>
+											<div class="order-date font--kr font--13 font--rg">${orderVo.orderDay}</div>
+										</div>
+										<div class="order-actions">
+											<form name="orderDetailFrm">
+												<input hidden="" name="orderId" value="${orderVo.orderId}">
+												<button class="text_hover_main action view-order font--kr font--13 font--rg" type="button">주문 상세보기</button>
+											</form>
+										</div>
 									</div>
-									<div class="order-date font--kr font--13 font--rg">2023/10/12</div>
-								</div>
-								<div class="order-actions">
-									<form action="수정필" method="post">
-										<input hidden="" name="order_id" value="000095716"> <input hidden="" name="mb_id" value="pangjjinny@gmail.com">
-										<button class="text_hover_main action view-order font--kr font--13 font--rg" type="submit">주문 상세보기</button>
-									</form>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="order-history-item">
-						<div class="order-history-item-info">
-							<div class="box-left">
-								<img class="order-image" src="https://www-prd-kr.gentlemonster.com/media/catalog/product/cache/b30b2c4494df46b5c4beed6ec9b510ab/1/1/11001_1240442012210435006_01.jpg" alt="">
-							</div>
-							<div class="box-right">
-								<div class="order-info">
-									<div class="order-increment-id font--kr font--13 font--rg">ORDER #000094654</div>
-									<div class="order-increment-id font--kr font--13 font--rg">
-										취소완료<span class="font--13 font--rg"> 외 </span>2<span class="font--13 font--rg">건</span>
-									</div>
-									<div class="order-total-items">
-										<span class="font--kr font--13 font--rg">주문 수량</span> : <span class="font--kr font--13 font--rg">3</span>
-									</div>
-									<div class="order-date font--kr font--13 font--rg">2023/09/27</div>
-								</div>
-								<div class="order-actions">
-									<form action="수정필" method="post">
-										<input hidden="" name="order_id" value="000094654"> <input hidden="" name="mb_id" value="pangjjinny@gmail.com">
-										<button class="text_hover_main action view-order font--kr font--13 font--rg" type="submit">주문 상세보기</button>
-									</form>
 								</div>
 							</div>
-						</div>
-					</div>
+
+						</c:forEach>
+					</c:if>
+					
+					
+					<c:if test="${empty requestScope.orderList}">
+						<div class="noOrderHistory">주문하신 상품이 존재하지 않습니다</div>
+					</c:if>
 				</div>
 
 
@@ -107,24 +94,12 @@ String ctxPath = request.getContextPath();
 
 
 
-				<!-- 부트스트랩 페이지네이션으로 할지 고민하기 수정필  -->
-				<div class="paging">
-					<ul class="pagination">
-						<li class="page-left-arrow">
-							<a class="page-link" herf=""> &lt; </a>
-						</li>
-						<li class="page-item">
-							<a class="page-link" href="order?page=1">
-								<b>1</b>
-							</a>
-						</li>
-						<li class="page-right-arrow">
-							<a class="page-link" herf=""> &gt; </a>
-						</li>
-					</ul>
+				<div class="orderListPagination">
+					<nav>
+						<ul class="pagination">${requestScope.pageBar}
+						</ul>
+					</nav>
 				</div>
-
-
 
 			</div>
 		</div>

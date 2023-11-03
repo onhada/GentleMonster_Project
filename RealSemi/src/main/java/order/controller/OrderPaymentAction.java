@@ -4,11 +4,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import address.domain.AddressBookVO;
+import address.model.AddressDAO;
+import address.model.AddressDAO_imple;
 import common.controller.AbstractController;
-import member.domain.AddressBookVO;
 import member.domain.MemberVO;
-import member.model.AddressBookDAO;
-import member.model.AddressBookDAO_imple;
 
 public class OrderPaymentAction extends AbstractController {
 
@@ -37,7 +37,7 @@ public class OrderPaymentAction extends AbstractController {
 				int isChangedAddr = Integer.parseInt(req.getParameter("change_address")); 
 				
 				
-				AddressBookDAO adao = new AddressBookDAO_imple();
+				AddressDAO adao = new AddressDAO_imple();
 
 				if (isChangedAddr != 1) {
 					// 유저가 input값을 변경해 주소가 바뀌지 않았다면 주소록에 등록되어있는 addressBookId를 가져온다

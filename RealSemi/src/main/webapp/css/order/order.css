@@ -1198,7 +1198,7 @@ body .input-box-check-layer::after {
     margin-bottom: 9px;
 }
 .link {
-    text-decoration: underline;
+    /* text-decoration: underline; */
 }
 .link {
     padding-bottom: 1px !important;

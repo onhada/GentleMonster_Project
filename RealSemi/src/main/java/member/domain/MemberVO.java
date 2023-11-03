@@ -12,8 +12,27 @@ public class MemberVO {
 	private int isDeleted;             // 탈퇴유무      0 : 정상  /  1 : 탈퇴
 	private String registerDay;        // 가입일자 
 	private String updateDay;          // 업데이트일자 
+	private String fullName;           // 풀네임 예진 추가 _ 게터세터도
+	private Long rno;                  // 인덱스 번호 예진 추가 _ 게터세터도
 	
 	
+	// 회원가입시 생성자 _ 민경
+	public MemberVO(String email, String pwd, int gender, String familyName, String lastName, String birth) {
+		this.email = email;
+		this.pwd = pwd;
+		this.gender = gender;
+		this.familyName = familyName;
+		this.lastName = lastName;
+		this.birth = birth;
+	}
+
+	public MemberVO(String email, String pwd, String familyName, String lastName, String birth) {
+		this.email = email;
+		this.pwd = pwd;
+		this.familyName = familyName;
+		this.lastName = lastName;
+		this.birth = birth;
+	}
 	//-----------예인추가
 	//회원수정시 생성자
 	public MemberVO(int memberId, String email, int gender) {
@@ -120,5 +139,17 @@ public class MemberVO {
 			return "여성";
 		}
 		
+	}
+	public String getFullName() {
+		return fullName;
+	}
+	public void setFullName(String fullName) {
+		this.fullName = fullName;
+	}
+	public Long getRno() {
+		return rno;
+	}
+	public void setRno(Long rno) {
+		this.rno = rno;
 	}
 }

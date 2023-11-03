@@ -30,21 +30,21 @@ String ctxPath = request.getContextPath();
 		<div class="topnav">
 			<div class="topnav-left">
 				<div class="page_menu_item link_item font--kr font--15 font--bd">
-					<a class="title" href="수정필">회원정보</a>
+					<a class="title" href="<%=ctxPath%>/member/memberInfoViewAll.gm">회원정보</a>
 				</div>
 			</div>
 			<ul class="page_menu_items page_menu_pc_items">
 				<li class="page_menu_item link_item">
-					<a href="수정필" class="font--kr font--15 font--rg"> 전체보기 </a>
+					<a href="<%=ctxPath%>/member/memberInfoViewAll.gm" class="font--kr font--15 font--rg"> 전체보기 </a>
 				</li>
 				<li class="page_menu_item link_item">
-					<a href="수정필" class="font--kr font--15 font--rg"> 위시리스트 </a>
+					<a href="<%=ctxPath%>/wish/wish.gm" class="font--kr font--15 font--rg"> 위시리스트 </a>
 				</li>
 				<li class="page_menu_item link_item selected">
-					<a href="수정필" class="font--kr font--15 font--rg" data-category="account" data-action="account_setting" data-label=""> 계정 설정 </a>
+					<a href="" class="font--kr font--15 font--rg" data-category="account" data-action="account_setting" data-label=""> 계정 설정 </a>
 				</li>
 				<li class="page_menu_item link_item">
-					<a href="수정필" class="font--kr font--15 font--rg"> 주문 </a>
+					<a href="<%=ctxPath%>/order/orderList.gm" class="font--kr font--15 font--rg"> 주문 </a>
 				</li>
 			</ul>
 			<div class="topnav-right">
@@ -65,13 +65,13 @@ String ctxPath = request.getContextPath();
 					<div class="page_menu_list">
 						<ul class="page_menu_items page_menu_pc_items">
 							<li class="page_menu_item link_item font--13 selected">
-								<a href="수정필" class="font--kr font--13 font--rg"> 회원정보 </a>
+								<a href="<%=ctxPath%>/member/memberInfoEdit.gm" class="font--kr font--13 font--rg"> 회원정보 </a>
 							</li>
 							<li class="page_menu_item link_item font--13 ">
-								<a href="수정필" class="font--kr font--13 font--rg"> 주소록 </a>
+								<a href="<%=ctxPath%>/address/addressBook.gm" class="font--kr font--13 font--rg"> 주소록 </a>
 							</li>
 							<li class="page_menu_item link_item font--13 ">
-								<a href="수정필" class="font--kr font--13 font--rg"> 비밀번호 변경 </a>
+								<a href="<%=ctxPath%>/member/memberToChangePwd.gm" class="font--kr font--13 font--rg"> 비밀번호 변경 </a>
 							</li>
 						</ul>
 					</div>

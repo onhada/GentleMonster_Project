@@ -22,13 +22,8 @@ public class OrderAddressAction extends AbstractController {
 
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse res) throws Exception {
-		MemberVO loginUser = new MemberVO();
-		loginUser.setEmail("hi@naver.com");
-		loginUser.setMemberId(1234);
-
 		HttpSession session = req.getSession();
 
-		session.setAttribute("loginUser", loginUser);
 		if (session.getAttribute("loginUser") != null) {
 			// 로그인 했을 경우
 			

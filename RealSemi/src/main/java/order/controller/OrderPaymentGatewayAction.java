@@ -6,11 +6,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import address.domain.AddressBookVO;
 import cart.domain.CartVO;
 import cart.model.CartDAO;
 import cart.model.CartDAO_imple;
 import common.controller.AbstractController;
-import member.domain.AddressBookVO;
 import member.domain.MemberVO;
 
 public class OrderPaymentGatewayAction extends AbstractController {

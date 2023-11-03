@@ -63,39 +63,63 @@ String ctxPath = request.getContextPath();
 								<th class="qty font--kr font--13 font--md order_line_height" style="padding-left: 10px;">수량</th>
 								<th class="subtotal font--kr font--13 font--md order_line_height">소계</th>
 							</tr>
-							<tr class="font--kr font--13 font--md order_line_height" style="vertical-align: top;">
-								<td class="item">
-									<img src="<%= ctxPath %>${requestScope.orderOne.mainImageFile}" alt="">
-								</td>
-								<td class="item product font--kr font--13 font--bd order_line_height">${requestScope.orderOne.productName}</td>
-								<td class="item price font--kr font--13 font--md order_line_height" style="padding-left: 4px;">
-									<fmt:formatNumber type="number" maxFractionDigits="3" value="${requestScope.orderOne.price}" />
-									원
-								</td>
-								<td class="item qty font--kr font--13 font--md order_line_height" style="padding-left: 10px;">${requestScope.orderOne.quantity}</td>
-								<td class="item subtotal font--kr font--13 font--md order_line_height">
-									<fmt:formatNumber type="number" maxFractionDigits="3" value="${requestScope.orderOne.price * requestScope.orderOne.quantity}" />
-									원
-								</td>
-							</tr>
+
+
+
+
+
+
+
+							<c:forEach var="orderVo" items="${requestScope.orderDetailList}">
+
+								<tr class="font--kr font--13 font--md order_line_height" style="vertical-align: top;">
+									<td class="item">
+										<img src="<%= ctxPath %>${orderVo.mainImageFile}" alt="">
+									</td>
+									<td class="item product font--kr font--13 font--bd order_line_height">${orderVo.productName}</td>
+									<td class="item price font--kr font--13 font--md order_line_height" style="padding-left: 4px;">
+										<fmt:formatNumber type="number" maxFractionDigits="3" value="${orderVo.price}" />
+										원
+									</td>
+									<td class="item qty font--kr font--13 font--md order_line_height" style="padding-left: 10px;">${orderVo.quantity}</td>
+									<td class="item subtotal font--kr font--13 font--md order_line_height">
+										<fmt:formatNumber type="number" maxFractionDigits="3" value="${orderVo.price * orderVo.quantity}" />
+										원
+									</td>
+								</tr>
+
+							</c:forEach>
+
+
+
+
+
+
+
+
+
+
 						</tbody>
 					</table>
 				</div>
 				<div class="order_summary order_margin_b174 order_margin_b100">
 					<ul>
 						<li class="field_summary subtotal" style="padding-bottom: 2px;">
-							<span class="label font--kr font--13 font--md order_line_height">소계</span> 
+							<span class="label font--kr font--13 font--md order_line_height">소계</span>
 							<span class="value font--kr font--13 font--md order_line_height">
-								<fmt:formatNumber type="number" maxFractionDigits="3" value="${requestScope.orderOne.amount}" /> 원
+								<fmt:formatNumber type="number" maxFractionDigits="3" value="${requestScope.orderOne.amount}" />
+								원
 							</span>
 						</li>
 						<li class="field_summary discount" style="padding-bottom: 2px;">
-							<span class="label font--kr font--13 font--md order_line_height">배송비</span> <span class="value font--kr font--13 font--md order_line_height">0원</span>
+							<span class="label font--kr font--13 font--md order_line_height">배송비</span>
+							<span class="value font--kr font--13 font--md order_line_height">0원</span>
 						</li>
 						<li class="field_summary discount" style="padding-bottom: 2px;">
-							<span class="label font--kr font--13 font--md order_line_height">총합계</span> 
+							<span class="label font--kr font--13 font--md order_line_height">총합계</span>
 							<span class="value font--kr font--13 font--md order_line_height">
-								<fmt:formatNumber type="number" maxFractionDigits="3" value="${requestScope.orderOne.amount}" /> 원
+								<fmt:formatNumber type="number" maxFractionDigits="3" value="${requestScope.orderOne.amount}" />
+								원
 							</span>
 						</li>
 					</ul>

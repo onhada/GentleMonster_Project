@@ -29,7 +29,18 @@ public interface OrderDAO {
 	// 관리자_주문목록 검색 _ 예진
 	List<OrderVO> searchOrder(Map<String, String> paraMap) throws SQLException;
 	
-	// 유저_주문내역 _ 예진
+	// 유저_주문내역 페이지 _ 예진
 	int getPersonalTotalPage(Map<String, String> paraMap) throws SQLException;
-
+	
+	// 유저_주문내역 리스트 취득 _ 예진
+	List<OrderVO> getPersonalOrderList(Map<String, String> paraMap) throws SQLException;
+	
+	// 유저_주문내역 상세용 OrderVO 취득 _ 예진
+	OrderVO getPersonalOrderOne(Map<String, String> paraMap) throws SQLException;
+	
+	// 유저_주문내역 상세용 주문 상품 리스트 취득 _ 예진
+	List<OrderVO> getPersonalOrderDetail(Map<String, String> paraMap) throws SQLException;
+	
+	// 유저_회원정보 주문내역 취득 _ 예진
+	List<OrderVO> getOrderListInfo(int memberId) throws SQLException;
 }

@@ -318,3 +318,9 @@ body .container-1350 {
 i, cite, em, var, address, dfn {
     font-style: normal;
 }
+
+
+/* 예진 추가 */
+.order-status {
+    line-height: 25px;
+}

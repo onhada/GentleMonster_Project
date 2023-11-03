@@ -22,12 +22,12 @@ public class CartAddAction extends AbstractController {
 
 			if ("POST".equalsIgnoreCase(req.getMethod())) {
 				// POST로 들어왔을 경우 = 정상 경로로 들어왔을 경우
-				
+
 				// dao에 전달할 값을 설정한다
 				Map<String, String> paraMap = new HashMap<>();
 				paraMap.put("productDetailId", req.getParameter("productDetailId"));
 				paraMap.put("memberId", String.valueOf(((MemberVO) session.getAttribute("loginUser")).getMemberId()));
-				
+
 				// 유저가 선택한 상품을 쇼핑백에 추가하는 처리
 				CartDAO dao = new CartDAO_imple();
 				int num = dao.addCartItem(paraMap);
@@ -35,15 +35,16 @@ public class CartAddAction extends AbstractController {
 				if (num == 1) {
 					// 추가처리가 완료되었을 경우 원래 화면으로 갈 수 있도록 한다
 
-					String message = "쇼핑백에 추가하였습니다.";
-					String loc = "javascript:history.back()";
-					req.setAttribute("message", message);
-					req.setAttribute("loc", loc);
-					
-					session.setAttribute("cartList", dao.getCartList(((MemberVO) session.getAttribute("loginUser")).getMemberId()));
-					
-					super.setRedirect(false);
-					super.setViewPage("/jsp/common/msg.jsp");
+					session.setAttribute("cartList",
+							dao.getCartList(((MemberVO) session.getAttribute("loginUser")).getMemberId()));
+
+					super.setRedirect(true);
+					/*
+					 * super.setViewPage(req.getContextPath() +
+					 * "/product/productDetail.gm?productDetailId=" +
+					 * req.getParameter("productDetailId"));
+					 */					
+					super.setViewPage(req.getHeader("referer"));
 
 				} else {
 					// 추가처리가 실패했을 경우
@@ -58,8 +59,8 @@ public class CartAddAction extends AbstractController {
 				}
 
 			} else {
-				// GET 방식으로 들어왔을 경우 
-				
+				// GET 방식으로 들어왔을 경우
+
 				String message = "잘못된 경로입니다. 인덱스 화면으로 이동합니다.";
 				String loc = req.getContextPath() + "/index.gm";
 
@@ -68,7 +69,8 @@ public class CartAddAction extends AbstractController {
 
 				super.setRedirect(false);
 				super.setViewPage("/jsp/common/msg.jsp");
-			} // end of if ("POST".equalsIgnoreCase(req.getMethod())) ---------------------------------------------------
+			} // end of if ("POST".equalsIgnoreCase(req.getMethod()))
+				// ---------------------------------------------------
 
 		} else {
 			// 로그인하지 않았을 경우
@@ -83,7 +85,8 @@ public class CartAddAction extends AbstractController {
 			super.setRedirect(false);
 			super.setViewPage("/jsp/common/msg.jsp");
 
-		} // end of if (session.getAttribute("loginUser") != null) -----------------------------------------------------------------------
+		} // end of if (session.getAttribute("loginUser") != null)
+			// -----------------------------------------------------------------------
 
 	}
 

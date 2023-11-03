@@ -133,7 +133,7 @@
 
 <!-- 지급보증서 관련 모달 화면-->
 <div class="modal fade" id="guarantee_modal">
-	<div class="modal-dialog">
+	<div class="modal-dialog" style="max-width: 550px;">
 		<div class="modal-content">
 
 			<!-- Modal header -->

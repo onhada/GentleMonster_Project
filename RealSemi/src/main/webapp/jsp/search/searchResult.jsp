@@ -36,7 +36,7 @@ String ctxPath = request.getContextPath();
 							<li data-id="14E4P7JEU08QV">
 								<div class="product">
 									<div class="product__image-wrapper">
-										<a class="product__link" href="수정필">
+										<a class="product__link" href="<%=ctxPath%>/product/productDetail.gm?productDetailId=${productVo.productDetailId}">
 											<img data-src="" alt="" src="<%=ctxPath%>${productVo.mainImageFile}">
 										</a>
 									</div>
@@ -79,7 +79,7 @@ String ctxPath = request.getContextPath();
 				</c:if>
 
 				<c:if test="${empty requestScope.productList}">
-					<div class="noItem">해당하는 상품이 존재하지 않습니다.</div>
+					<div class="noItem">"${requestScope.searchKeyword}"에서 정확히 일치하는 정보를 찾지 못했습니다.단어의 철자나 띄어쓰기가 정확한지 확인해주시기 바랍니다.</div>
 				</c:if>
 			</div>
 		</div>

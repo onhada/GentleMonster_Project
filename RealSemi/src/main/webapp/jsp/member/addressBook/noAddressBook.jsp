@@ -23,21 +23,21 @@ String ctxPath = request.getContextPath();
 	<div class="topnav">
 		<div class="topnav-left">
 			<div class="page_menu_item link_item font--kr font--15 font--bd">
-				<a class="title" href="https://www.gentlemonster.com/kr/customer/index">회원정보</a>
+				<a class="title" href="<%=ctxPath%>/member/memberInfoViewAll.gm">회원정보</a>
 			</div>
 		</div>
 		<ul class="page_menu_items page_menu_mobile_items">
 			<li class="page_menu_item link_item">
-				<a href="https://www.gentlemonster.com/kr/customer/index" class="font--kr font--13 font--rg"> 전체보기 </a>
+				<a href="<%=ctxPath%>/member/memberInfoViewAll.gm" class="font--kr font--13 font--rg"> 전체보기 </a>
 			</li>
 			<li class="page_menu_item link_item  ">
-				<a href="https://www.gentlemonster.com/kr/customer/wishlist" class="font--kr font--13 font--rg"> 위시리스트 </a>
+				<a href="<%=ctxPath%>/wish/wish.gm" class="font--kr font--13 font--rg"> 위시리스트 </a>
 			</li>
 			<li class="page_menu_item link_item  selected">
-				<a href="https://www.gentlemonster.com/kr/customer/account_setting" class="font--kr font--13 font--rg" data-category="account" data-action="account_setting" data-label=""> 계정 설정 </a>
+				<a href="" class="font--kr font--13 font--rg" data-category="account" data-action="account_setting" data-label=""> 계정 설정 </a>
 			</li>
 			<li class="page_menu_item link_item  ">
-				<a href="https://www.gentlemonster.com/kr/customer/order" class="font--kr font--13 font--rg"> 주문 </a>
+				<a href="<%=ctxPath%>/order/orderList.gm" class="font--kr font--13 font--rg"> 주문 </a>
 			</li>
 
 		</ul>
@@ -56,14 +56,14 @@ String ctxPath = request.getContextPath();
 				<div class="page_menu_list">
 					<ul class="page_menu_items page_menu_mobile_items">
 						<li class="page_menu_item link_item font--13 ">
-							<a href="https://www.gentlemonster.com/kr/customer/account_setting" class="font--kr font--13 font--rg"> 회원정보 </a>
+							<a href="<%=ctxPath%>/member/memberInfoEdit.gm" class="font--kr font--13 font--rg"> 회원정보 </a>
 						</li>
 						<!-- todo: move when develop layout -->
 						<li class="page_menu_item link_item font--13 selected">
-							<a href="https://www.gentlemonster.com/kr/customer/address_book" class="font--kr font--13 font--rg"> 주소록 </a>
+							<a href="<%=ctxPath%>/address/addressBook.gm" class="font--kr font--13 font--rg"> 주소록 </a>
 						</li>
 						<li class="page_menu_item link_item font--13 ">
-							<a href="https://www.gentlemonster.com/kr/customer/change_password" class="font--kr font--13 font--rg"> 비밀번호 변경 </a>
+							<a href="<%=ctxPath%>/member/memberToChangePwd.gm" class="font--kr font--13 font--rg"> 비밀번호 변경 </a>
 						</li>
 
 					</ul>
@@ -74,7 +74,7 @@ String ctxPath = request.getContextPath();
 				<div style="display: block;" id="not_exist_address" class="text_c font--kr font--13 font--rg">
 					등록된 배송지가 없습니다.
 					<div class="button-group">
-						<button type="button" style="font-weight: bold;" class="btn btn-black font--kr font--13 font--rg" onclick="location.href='https://www.gentlemonster.com/kr/customer/address_input'">다른 주소 추가하기</button>
+						<button type="button" style="font-weight: bold;" class="btn btn-black font--kr font--13 font--rg" onclick="location.href='addressBookAdd.gm'">다른 주소 추가하기</button>
 					</div>
 				</div>
 			</div>

@@ -13,16 +13,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(
-		description = "사용자가 웹에서 *.gm 을 했을 경우 이 서블릿이 응답을 해주도록 한다.", 
-		urlPatterns = { "*.gm" }, 
-		initParams = {
-				@WebInitParam(	name = "propertyConfig", 
-								value = "C:/git/RealSemi/RealSemi/src/main/webapp/WEB-INF/Command.properties", 
-								description = "*.gm 에 대한 클래스의 매핑파일"
-							 ) 
-					}
-			)
+@WebServlet(description = "사용자가 웹에서 *.gm 을 했을 경우 이 서블릿이 응답을 해주도록 한다.", urlPatterns = { "*.gm" }, initParams = {
+		@WebInitParam(name = "propertyConfig", value = "C:/NCS/workspace_jsp/TempSemi/src/main/webapp/WEB-INF/Command.properties", description = "*.gm 에 대한 클래스의 매핑파일") })
 public class FrontController extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
@@ -67,8 +59,8 @@ public class FrontController extends HttpServlet {
 			} // end of while(en.hasMoreElements())--------------
 
 		} catch (FileNotFoundException e) {
-			System.out
-					.println(">>> C:/NCS/workspace_jsp/TempSemi/src/main/webapp/WEB-INF/Command.properties 파일이 없습니다.<<<");
+			System.out.println(
+					">>> C:/NCS/workspace_jsp/TempSemi/src/main/webapp/WEB-INF/Command.properties 파일이 없습니다.<<<");
 			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -81,9 +73,11 @@ public class FrontController extends HttpServlet {
 
 	}// end of public void init(ServletConfig config) throws ServletException--------
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 
 		String uri = request.getRequestURI();
+		
 		String key = uri.substring(request.getContextPath().length());
 
 		AbstractController action = (AbstractController) cmdMap.get(key);
@@ -107,16 +101,20 @@ public class FrontController extends HttpServlet {
 					if (viewPage != null) {
 						response.sendRedirect(viewPage);
 					}
-				} // end of if(!bool)-----------------------------------------------------------------
+				} // end of
+					// if(!bool)-----------------------------------------------------------------
 
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} // end of if (action == null) --------------------------------------------------------------------
+		} // end of if (action == null)
+			// --------------------------------------------------------------------
 
-	} // end of protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+	} // end of protected void doGet(HttpServletRequest request, HttpServletResponse
+		// response) throws ServletException, IOException
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		doGet(request, response);
 	}
 

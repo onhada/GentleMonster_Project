@@ -15,6 +15,15 @@ a.product__link {
 	text-decoration: none;
 }
 
+svg#레이어_1 {
+	margin: 0 !important;
+}
+
+
+.n-arrow {
+
+	border: none !important;
+}
 /* 아래는 공식사이트에서 복붙한 것 */
 
 /* 카테고리 시작 */
@@ -1628,3 +1637,241 @@ input, button, select, textarea {
     display: inline-block;
     vertical-align: top;
 }
+
+
+.product__wish.on svg path,
+.product__wish:hover svg path {
+   stroke: #ff0000;
+   fill: #ff0000;
+}
+
+[type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
+    cursor: pointer;
+}
+.float-right {
+    float: right!important;
+}
+.float-right {
+    float: right;
+}
+.float-right {
+    float: right;
+}
+.product__wish {
+    width: 17px;
+}
+[type=button], [type=reset], [type=submit], button {
+    -webkit-appearance: button;
+}
+button, select {
+    text-transform: none;
+}
+button, input {
+    overflow: visible;
+}
+button, input, optgroup, select, textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+button {
+    border-radius: 0;
+}
+button {
+    border: none;
+    background: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+}
+button {
+    overflow: visible;
+}
+button, select {
+    text-transform: none;
+}
+button, html input[type=button], input[type=reset], input[type=submit] {
+    -webkit-appearance: button;
+    cursor: pointer;
+}
+input, button, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+button {
+    background: transparent;
+    padding: 0;
+    border: 0;
+    letter-spacing: 0em;
+}
+body, p, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, table, th, td, form, fieldset, legend, input, textarea, button {
+    margin: 0;
+    padding: 0;
+}
+input, button, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+button, select {
+    text-transform: none;
+}
+button, input, optgroup, select, textarea {
+    margin: 0;
+    font: inherit;
+    color: inherit;
+}
+button {
+    background: transparent;
+    padding: 0;
+    border: 0;
+    letter-spacing: 0em;
+}
+button {
+    border: none;
+    background: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+}
+button, html input[type=button], input[type=reset], input[type=submit] {
+    -webkit-appearance: button;
+    cursor: pointer;
+}
+body, p, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, table, th, td, form, fieldset, legend, input, textarea, button {
+    margin: 0;
+    padding: 0;
+}
+button {
+    overflow: visible;
+}
+svg#레이어_1 {
+    width: 20px;
+    height: 20px;
+    margin: 26.2px 0;
+}
+svg:not(:root) {
+    overflow: hidden;
+}
+.product__wish svg path {
+    stroke: #000;
+    stroke-width: 2px;
+}
+svg#레이어_1 {
+    width: 20px;
+    height: 20px;
+    margin: 26.2px 0;
+}
+svg:not(:root) {
+    overflow: hidden;
+}
+
+svg:not(:root) {
+    overflow: hidden;
+}
+svg {
+    overflow: hidden;
+    vertical-align: middle;
+}
+[type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
+    cursor: pointer;
+}
+[type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
+    cursor: pointer;
+}
+.float-right {
+    float: right!important;
+}
+.float-right {
+    float: right;
+}
+.product__wish {
+    width: 17px;
+}
+.float-right {
+    float: right;
+}
+.float-right {
+    float: right;
+}
+.float-right {
+    float: right!important;
+}
+.float-right {
+    float: right;
+}
+.product__wish {
+    width: 17px;
+}
+[type=button], [type=reset], [type=submit], button {
+    -webkit-appearance: button;
+}
+button, select {
+    text-transform: none;
+}
+button, input {
+    overflow: visible;
+}
+button, input, optgroup, select, textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+button {
+    border-radius: 0;
+}
+.clearfix::after {
+    display: block;
+    clear: both;
+    content: "";
+}
+
+input[type=checkbox]:checked ~ .input-box-check-layer:after {
+    opacity: 1;
+}
+
+.n-radio:checked ~ .n-checkbox--radio::after {
+    background: #000;
+}
+
+.n-radio:checked ~ .n-checkbox--radio {
+    border-color: #000;
+}
+.n-checkbox--radio {
+    width: 18px;
+    height: 18px;
+    border: 1px solid #cbcbcb;
+    border-radius: 50%;
+}
+.n-checkbox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    box-sizing: border-box;
+    border: 1px solid #000;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+.n-radio:checked ~ .n-checkbox--radio::after {
+    background: #000;
+}
+.n-checkbox--radio::after {
+    content: "";
+    display: block;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border: none;
+    transition: background 0.3s ease;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+

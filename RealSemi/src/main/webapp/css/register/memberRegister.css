@@ -112,7 +112,7 @@ body, p, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, table, th, td, form, fi
 input {
     border: none;
     background: none;
-    -webkit-appearance: none;
+    /*-webkit-appearance: none;*/
 }
 input {
     margin: 0;
@@ -410,7 +410,7 @@ label {
 
 @media (max-width: 414px){
     .select-box .pc-select {
-        display: none;
+       /* display: none;*/
     }
 }
 .select-box .pc-select {
@@ -486,7 +486,7 @@ ul, ol {
     }
 }
 .select-box .mo-select {
-    display: none;
+  /*  display: none;*/
     width: 100%;
     height: 40px;
     border: 1px solid #000;
@@ -497,14 +497,14 @@ ul, ol {
 }
 
 .select-box .mo-select, .gender.input-box input {
-    display: none;
+   /* display: none;*/
 }
 
 select {
     border: none;
     border-radius: 0;
     background: none;
-    -webkit-appearance: none;
+   /* -webkit-appearance: none;*/
 }
 select {
     border: 1px solid #ccc;
@@ -719,8 +719,10 @@ a {
 }
 
 .atag-line {
-    border-bottom: 1px solid #343434 !important;
-    text-decoration: none !important;
+    /*border-bottom: 1px solid #343434 !important;*/
+    border-bottom: 1px solid #343434;
+    /*text-decoration: none !important;*/
+    text-decoration: none;
 }
 
 .register-wrap .button-group {
@@ -1060,3 +1062,271 @@ select {
 .select-box .pc-select {
     z-index: auto !important;
 }
+
+.select-box .pc-select .current::before, .select-box .pc-select .current::after {
+    content: '';
+    display: block;
+    width: 7px;
+    height: 1px;
+    background: #251916;
+    position: absolute;
+    top: 50%;
+    right: 18px;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    -webkit-transition: transform .3s ease-out;
+    transition: transform .3s ease-out;
+    margin-top: -1px;
+}
+*:before, *:after {
+    box-sizing: border-box;
+}
+
+.select-box .pc-select .current::after {
+    right: 13px;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+.select-box .pc-select .current::before, .select-box .pc-select .current::after {
+    content: '';
+    display: block;
+    width: 7px;
+    height: 1px;
+    background: #251916;
+    position: absolute;
+    top: 50%;
+    right: 18px;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    -webkit-transition: transform .3s ease-out;
+    transition: transform .3s ease-out;
+    margin-top: -1px;
+}
+*:before, *:after {
+    box-sizing: border-box;
+}
+
+.select-box .pc-select .current.on::before {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+.select-box .pc-select .current::before, .select-box .pc-select .current::after {
+    content: '';
+    display: block;
+    width: 7px;
+    height: 1px;
+    background: #251916;
+    position: absolute;
+    top: 50%;
+    right: 18px;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    -webkit-transition: transform .3s ease-out;
+    transition: transform .3s ease-out;
+    margin-top: -1px;
+}
+*:before, *:after {
+    box-sizing: border-box;
+}
+
+.select-box .pc-select .current.on::after {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.select-box .pc-select .current::after {
+    right: 13px;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+.select-box .pc-select .current::before, .select-box .pc-select .current::after {
+    content: '';
+    display: block;
+    width: 7px;
+    height: 1px;
+    background: #251916;
+    position: absolute;
+    top: 50%;
+    right: 18px;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    -webkit-transition: transform .3s ease-out;
+    transition: transform .3s ease-out;
+    margin-top: -1px;
+}
+
+*:before, *:after {
+    box-sizing: border-box;
+}
+
+.select-box .mo-select {
+   /* display: none;*/
+    width: 100%;
+    height: 40px;
+    border: 1px solid #000;
+    /* text-indent: 15px; */
+    /* font-size: 12px; */
+    padding-left: 15px;
+    color: #343434;
+}
+.select-box .mo-select, .gender.input-box input {
+    /*display: none;*/
+}
+.font--13 {
+    font-size: 13px;
+}
+.font--kr {
+    font-family: "Unica77LLWeb","SDGothicNeo", sans-serif;
+    word-break: keep-all;
+}
+select {
+    border: none;
+    border-radius: 0;
+    background: none;
+    /*-webkit-appearance: none;*/
+}
+select {
+    border: 1px solid #ccc;
+    border-radius: 0;
+}
+input, button, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+button, select {
+    text-transform: none;
+}
+button, input, optgroup, select, textarea {
+    margin: 0;
+    font: inherit;
+    color: inherit;
+}
+* {
+    box-sizing: border-box;
+    line-height: normal;
+}
+
+.select-box .pc-select {
+    position: relative;
+    z-index: 10;
+}
+.select-box .pc-select {
+    z-index: auto !important;
+}
+div, p, a {
+    word-break: keep-all;
+}
+html, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, form, dl, dt, dd, ol, ul, li, fieldset, form, label, legend {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    /* font-size: 100%; */
+    /* vertical-align: top; */
+    background: transparent;
+    word-break: break-all;
+}
+
+#fregisterform > div.agreement.agreement-group.group_mttype01 > div:nth-child(3) > label > div
+#agreement_age
+
+#agreement_age {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    border: 1px solid #2b2e34;
+    z-index: 1;
+}
+
+
+
+/*공식 */
+input #agreement_age {
+	/* Font & Text */
+	font-family: Unica77LLWeb, SDGothicNeo, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 700;
+	letter-spacing: normal;
+	line-height: normal;
+	text-decoration: none solid rgb(52, 52, 52);
+	text-align: left;
+	text-indent: 0px;
+	text-transform: none;
+	vertical-align: baseline;
+	white-space: normal;
+	word-spacing: 0px;
+
+	/* Color & Background */
+	background-attachment: scroll;
+	background-color: rgba(0, 0, 0, 0);
+	background-image: none;
+	background-position: 0% 0%;
+	background-repeat: repeat;
+	color: rgb(52, 52, 52);
+
+	/* Box */
+	height: 15px;
+	width: 15px;
+	border: 0px none rgb(52, 52, 52);
+	border-top: 0px none rgb(52, 52, 52);
+	border-right: 0px none rgb(52, 52, 52);
+	border-bottom: 0px none rgb(52, 52, 52);
+	border-left: 0px none rgb(52, 52, 52);
+	margin: 2px 11px 0px 0px;
+	padding: 0px;
+	max-height: none;
+	min-height: auto;
+	max-width: none;
+	min-width: auto;
+
+	/* Positioning */
+	position: relative;
+	top: 0px;
+	bottom: 0px;
+	right: 0px;
+	left: 0px;
+	float: none;
+	display: block;
+	clear: none;
+	z-index: auto;
+
+	/* List */
+	list-style-image: none;
+	list-style-type: disc;
+	list-style-position: outside;
+
+	/* Table */
+	border-collapse: separate;
+	border-spacing: 0px 0px;
+	caption-side: top;
+	empty-cells: show;
+	table-layout: auto;
+
+	/* Miscellaneous */
+	overflow: visible;
+	cursor: pointer;
+	visibility: visible;
+
+	/* Effects */
+	transform: none;
+	transition: all 0s ease 0s;
+	outline: rgb(255, 0, 0) dashed 1px;
+	outline-offset: 0px;
+	box-sizing: border-box;
+	resize: none;
+	text-shadow: none;
+	text-overflow: clip;
+	word-wrap: normal;
+	box-shadow: none;
+	border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+}
+
